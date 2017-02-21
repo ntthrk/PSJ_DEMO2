@@ -80,6 +80,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void gesturePage(View view){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.content,new GestureFragment()).commit();
+
+    }
+
 
 
 }

@@ -19,6 +19,7 @@ public class GestureFragment extends Fragment implements OnGestureListener, OnDo
     }
     private static TextView textView;
     private GestureDetectorCompat GentureDetect = new GestureDetectorCompat(getContext(), this);
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

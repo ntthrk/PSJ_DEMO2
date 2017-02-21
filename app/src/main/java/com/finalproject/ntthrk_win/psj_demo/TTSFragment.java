@@ -1,10 +1,12 @@
 package com.finalproject.ntthrk_win.psj_demo;
 
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,17 +50,29 @@ public class TTSFragment extends Fragment{
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-
-
-
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getContext(),txtList[position],Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(),txtList[position],Toast.LENGTH_LONG).show();
 
                 MyTTS.getInstance(getContext())
-//                        .setEngine("com.google.android.tts")​
+//                      .setEngine("com.google.android.tts")​
                         .setLocale(new Locale("th"))
                         .speak(txtList[position]);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage(txtList[position]);
+                builder.setPositiveButton("โต้ตอบ", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+                builder.setNegativeButton("ปฏิเสธ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //dialog.dismiss();
+                    }
+                });
+                builder.show();
 
             }
         });

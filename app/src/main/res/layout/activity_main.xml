@@ -11,10 +11,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary">
 
         <TextView
             android:onClick="ttsPage"
+            android:textColor="#ffffff"
             android:gravity="center"
             android:text="TTS"
             android:layout_weight="1"
@@ -25,6 +27,7 @@
             android:onClick="sttPage"
             android:gravity="center"
             android:text="SST"
+            android:textColor="#ffffff"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -34,21 +37,23 @@
             android:onClick="memoPage"
             android:gravity="center"
             android:text="MEMO"
+            android:textColor="#ffffff"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent" />
         <TextView
             android:onClick="gesturePage"
             android:gravity="center"
+            android:textColor="#ffffff"
             android:text="GESTURE"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent" />
-
 
     </LinearLayout>
     <FrameLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></FrameLayout>
+
 </LinearLayout>

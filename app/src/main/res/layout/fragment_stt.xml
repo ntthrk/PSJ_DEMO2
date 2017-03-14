@@ -1,13 +1,21 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/sstFragmetLaout"
     android:layout_height="match_parent"
     tools:context="com.finalproject.ntthrk_win.psj_demo.STTFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Speech to Text Page" />
+        android:weightSum="0">
+
+        <TextView
+            android:gravity="top"
+            android:layout_width="match_parent"
+            android:layout_height="220dp" />
+
+    </LinearLayout>
 
 </FrameLayout>

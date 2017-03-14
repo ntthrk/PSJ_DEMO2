@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,8 +53,8 @@ public class TTSFragment extends Fragment{
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Toast.makeText(getContext(),txtList[position],Toast.LENGTH_LONG).show();
+            public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
+                Toast.makeText(getContext(),txtList[position],Toast.LENGTH_LONG).show();
 
                 MyTTS.getInstance(getContext())
 //                      .setEngine("com.google.android.tts")​
@@ -63,7 +65,8 @@ public class TTSFragment extends Fragment{
                 builder.setMessage(txtList[position]);
                 builder.setPositiveButton("โต้ตอบ", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-
+                        //getSupportFragmentMannager().beginTransaction()
+                          //      .replace(R.id.sstFragmetLaout,new STTFragment()).commit();
                     }
                 });
                 builder.setNegativeButton("ปฏิเสธ", new DialogInterface.OnClickListener() {
@@ -73,7 +76,6 @@ public class TTSFragment extends Fragment{
                     }
                 });
                 builder.show();
-
             }
         });
     }
